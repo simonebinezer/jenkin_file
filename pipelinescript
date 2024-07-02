@@ -1,32 +1,29 @@
-Pipeline{
-agent any
-stages
-public class sampletest 
+pipeline {
+    agent any
 
-{
-stage('build')
-{
-steps{
-echo "Building the Project"
-}
-}
-stage('Test')
-{
-steps{
-echo "Testing the Project"
-}
-}
-stage('deploy')
-{
-steps{
-echo "Deploying the project....."
-}
-}
-stage('release')
-{
-steps{
-echo "release the Project...."
-}
-}
-}
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'master', url: 'https://github.com/simonebinezer/jenkin_file.git'
+            }
+        }
+        
+        stage('Build') {
+            steps {
+                echo 'Building...'
+            }
+        }
+        
+        stage('Test') {
+            steps {
+                echo 'Testing...'
+            }
+        }
+        
+        stage('Deploy') {
+            steps {
+                echo 'Deploying...'
+            }
+        }
+    }
 }
