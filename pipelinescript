@@ -1,32 +1,25 @@
-Pipeline{
-agent any
-stages
-public class sampletest 
-
-{
-stage('build')
-{
-steps{
-echo "Building the Project"
-}
-}
-stage('Test')
-{
-steps{
-echo "Testing the Project"
-}
-}
-stage('deploy')
-{
-steps{
-echo "Deploying the project....."
-}
-}
-stage('release')
-{
-steps{
-echo "release the Project...."
-}
-}
-}
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                echo "Building the Project"
+            }
+        }
+        stage('Test') {
+            steps {
+                echo "Testing the Project"
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo "Deploying the project..."
+            }
+        }
+        stage('Release') {
+            steps {
+                echo "Releasing the Project..."
+            }
+        }
+    }
 }
